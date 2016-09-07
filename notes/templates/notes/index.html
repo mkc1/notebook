@@ -1,0 +1,17 @@
+{% extends 'notes/base.html' %}
+{% block body %}
+{% if object_list %}
+<div class="note-list">
+  {% for note in object_list %}
+    <div class="single-note col-md-8">
+      <a href="{% url 'notes:detail' note.id %}" class="note-title">{{ note }}</a>
+      <p>{{note.body}}</p>
+    </div>
+  {% endfor %}
+</div>
+
+{% else %}
+  <h3>You haven't created any notes yet!</h3>
+
+{% endif %}
+{% endblock %}
