@@ -3,9 +3,14 @@
 {% block body %}
 <div class="container">
   <div class="single-note col-md-8">
+    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
     <h1>{{ note }}</h1>
+    
+    <h3>{{ note.created_date }}</h3>
 
-    <h3>{{ note.body }}</h3>
+    <h3 class="note-body">{{ note.body }}</h3>
+
   </div>
 </div>
 {% endblock %}

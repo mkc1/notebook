@@ -7,10 +7,10 @@ class Note(models.Model):
   body = models.CharField(max_length=10000)
   created_date = models.DateTimeField(default=now, blank=True)
 
-  #redirect to details of note
+  # redirect to details of note
   def get_absolute_url(self):
     return reverse('notes:detail', kwargs={'pk' : self.pk})
 
-  #display name
+  # display name
   def __str__(self):
     return self.note_title

@@ -1,5 +1,6 @@
 body {
-  background-image: url("background.jpg");
+  /*background-image: url("background.jpg");*/
+  background-color: #E3F6FC;
 }
 
 .navbar {
@@ -10,8 +11,23 @@ body {
   float: none;
   margin: 30px auto;
   background: rgba(255,255,255,0.9);
+  padding: 10px 30px 15px 20px;
 }
 
 .note-title {
   color: black;
+}
+
+.note-body {
+  margin-bottom: 20px;
+}
+
+.glyphicon {
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+.glyphicon-trash, .glyphicon-pencil {
+  float: right;
+  margin-top: 10px;
 }
