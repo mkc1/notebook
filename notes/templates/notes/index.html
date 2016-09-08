@@ -5,9 +5,8 @@
 <div class="note-list">
   {% for note in object_list %}
     <div class="single-note col-md-8">
-    
+
       <form action="{% url 'notes:note-update' note.id %}" method="get">
-        {% csrf_token %}
         <button class="btn pull-right" type="submit">
           <span class="glyphicon glyphicon-pencil"></span>
         </button>
