@@ -3,8 +3,21 @@
 {% block body %}
 <div class="container">
   <div class="single-note col-md-8">
-    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-    <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+    
+    <form action="{% url 'notes:note-update' note.id %}" method="get">
+      {% csrf_token %}
+      <button class="btn pull-right" type="submit">
+        <span class="glyphicon glyphicon-pencil"></span>
+      </button>
+    </form>
+
+    <form action="{% url 'notes:note-delete' note.id %}" method="post">
+      {% csrf_token %}
+      <button class="btn pull-right" type="submit">
+        <span class="glyphicon glyphicon-trash"></span>
+      </button>
+    </form>
+
     <h1>{{ note }}</h1>
     
     <h3>{{ note.created_date }}</h3>

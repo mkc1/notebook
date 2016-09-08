@@ -5,8 +5,21 @@
 <div class="note-list">
   {% for note in object_list %}
     <div class="single-note col-md-8">
-      <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-      <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+    
+      <form action="{% url 'notes:note-update' note.id %}" method="get">
+        {% csrf_token %}
+        <button class="btn pull-right" type="submit">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </button>
+      </form>
+
+      <form action="{% url 'notes:note-delete' note.id %}" method="post">
+        {% csrf_token %}
+        <button class="btn pull-right" type="submit">
+          <span class="glyphicon glyphicon-trash"></span>
+        </button>
+      </form>
+
       <h1><a href="{% url 'notes:detail' note.id %}" class="note-title">{{ note }}</a></h1>
       <h3>{{ note.created_date }}</h3>
       <p>{{note.body}}</p>
